@@ -32,8 +32,8 @@ python3 plot_image_sentinel.py 20230312
 ```
 
 
-<img src='example/20230312_092009_sentinel2_false_color_ATKAstd.jpg' width='250'>
-<img src='example/20230312_092009_sentinel2_true_color_sharp_ATKAstd.jpg' width='250'>
+<img src='examples/20230312_092009_sentinel2_false_color_ATKAstd.jpg' width='350'>
+<img src='examples/20230312_092009_sentinel2_true_color_sharp_ATKAstd.jpg' width='350'>
 
 
 ### Composites and Projection
