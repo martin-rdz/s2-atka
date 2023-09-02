@@ -87,20 +87,8 @@ def download_features(feature, outpath):
         response = session.get(url, allow_redirects=False)
 
     f = session.get(url, verify=False, allow_redirects=True)
-
-    #response = requests.get(url, stream=True, headers=headers)
-    print('response headers ', response.headers)
-    #if response.headers['Content-Type'] == 'application/zip':
-    #with open('test.zip', 'wb') as out_file:
-        #shutil.copyfileobj(response.raw, out_file)
-    #    with ZipFile(BytesIO(f.content)) as zfile:
-    #        zfile.extractall(op)
     with ZipFile(BytesIO(f.content)) as zfile:
         zfile.extractall(op)
-    #else:
-    #    print(response.content)
-    #    print('wait for input')
-    #    input()
     
 
 
@@ -116,12 +104,6 @@ args = parser.parse_args()
 
 print(args.date)
 
-#dt_start = datetime.datetime(2022, 9, 1)
-#dt_end = datetime.datetime(2022, 12, 1)
-#dt_start = datetime.datetime(2023, 4, 5)
-#dt_end = datetime.datetime(2023, 4, 9)
-#dt_start = datetime.datetime(2023, 8, 30)
-#dt_end = datetime.datetime(2023, 9, 2)
 dt_start = datetime.datetime.strptime(args.date, "%Y%m%d")
 dt_end = dt_start + datetime.timedelta(hours=24)
 lat = -70.6
@@ -137,6 +119,4 @@ for f in features:
     # token is valid only very short time -> update frequently
     tokens = get_token(config)
     download_features(f, outpath)
-
-
 
