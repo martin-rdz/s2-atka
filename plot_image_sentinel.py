@@ -52,8 +52,10 @@ area_extent =(85000, 2135000, 180000, 2205000)
 #Upper Right ( -265239.500, 2143800.300) (  7d 3'10.87"W, 70d18'25.56"S)
 #Lower Right ( -265239.500, 2093800.300) (  7d13'10.88"W, 70d45' 4.19"S)
 #Center      ( -290239.500, 2118800.300) (  7d48' 0.00"W, 70d30' 0.00"S)
+proj_id = 'EPSG:3031'
 area_extent = (-315239.5, 2093800.2999999998, -265239.5, 2143800.3)
-areadefs['ATKAstd'] = AreaDefinition("ATKAstd", "SouthPolarSt", description, proj_dict, width, height, area_extent)
+#areadefs['ATKAstd'] = AreaDefinition("ATKAstd", "SouthPolarSt", description, proj_id, proj_dict, width, height, area_extent)
+areadefs['ATKAstd'] = AreaDefinition("ATKAstd", "SouthPolarSt", description, proj_id, width, height, area_extent)
 print(f'ATKAstd current res [m]  {(area_extent[2]-area_extent[0])/width:.2f}, {(area_extent[3]-area_extent[1])/height:.2f}')
 
 areadef = areadefs["ATKAstd"]
